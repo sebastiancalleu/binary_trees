@@ -1,7 +1,7 @@
 #include "binary_trees.h"
 
 /**
- * binary_tree_preorder - function that print preorder.
+ * binary_tree_inorder - function that print preorder.
  * @func: print function.
  * @tree: the tree.
  */

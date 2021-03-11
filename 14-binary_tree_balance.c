@@ -28,7 +28,7 @@ int binary_tree_balance(const binary_tree_t *tree)
 	int lcounter = 0, rcounter = 0, bop;
 
 	if (tree == NULL)
-		return (NULL);
+		return (0);
 
 	if (tree->left)
 		lcounter = binary_tree_balance_help(tree->left);

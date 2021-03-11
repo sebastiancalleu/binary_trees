@@ -20,13 +20,16 @@ void binary_tree_is_full_help(const binary_tree_t *tree, int *counter)
 	}
 }
 /**
- * binary_tree_nodes - function that counts the nodes with at less 1 node
+ * binary_tree_is_full - function that counts the nodes with at less 1 node
  * @tree: pointer to the root node of the tree to count
  * Return: the leaves
  */
 int binary_tree_is_full(const binary_tree_t *tree)
 {
 	int counter = 1;
+
+	if (tree == NULL)
+		return (0);
 
 	binary_tree_is_full_help(tree, &counter);
 	return (counter);

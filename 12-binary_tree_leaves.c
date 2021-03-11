@@ -1,9 +1,9 @@
 #include "binary_trees.h"
 
 /**
- * binary_tree_postorder - function that print postorder.
- * @func: print function.
- * @tree: the tree.
+ * binary_tree_leaves_help - This function is auxiliar for the count
+ * @tree: is the pointer to the root node
+ * @counter: is the pointer to the counter the nodes
  */
 void binary_tree_leaves_help(const binary_tree_t *tree, size_t *counter)
 {
@@ -17,9 +17,16 @@ void binary_tree_leaves_help(const binary_tree_t *tree, size_t *counter)
 			*counter = *counter + 1;
 	}
 }
+
+/**
+ * binary_tree_leaves - function that counts the leaves in binary tree.
+ * @tree: pointer to the root node of the tree to count
+ * Return: the leaves
+ */
 size_t binary_tree_leaves(const binary_tree_t *tree)
 {
 	size_t counter = 0;
+
 	binary_tree_leaves_help(tree, &counter);
 	return (counter);
 }

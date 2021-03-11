@@ -1,9 +1,10 @@
 #include "binary_trees.h"
 
 /**
- * binary_tree_nodes_help - This function is auxiliar for the count
+ * binary_tree_balance_help - This function is auxiliar
+ * for the lcounter and the rcounter
  * @tree: is the pointer to the root node
- * @counter: is the pointer to the counter the nodes
+ * Return: size of the branch right
  */
 int binary_tree_balance_help(const binary_tree_t *tree)
 {
@@ -18,13 +19,16 @@ int binary_tree_balance_help(const binary_tree_t *tree)
 	return (rightsize + 1);
 }
 /**
- * binary_tree_nodes - function that counts the nodes with at less 1 node
+ * binary_tree_balance - function that counts the nodes with at less 1 node
  * @tree: pointer to the root node of the tree to count
- * Return: the leaves
+ * Return: the power balance
  */
 int binary_tree_balance(const binary_tree_t *tree)
 {
 	int lcounter = 0, rcounter = 0, bop;
+
+	if (tree == NULL)
+		return (NULL);
 
 	if (tree->left)
 		lcounter = binary_tree_balance_help(tree->left);

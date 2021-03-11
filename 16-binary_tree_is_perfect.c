@@ -14,8 +14,8 @@ int binary_tree_balance_help(const binary_tree_t *tree)
 		return (1);
 	leftsize = binary_tree_balance_help(tree->left);
 	rightsize = binary_tree_balance_help(tree->right);
-	if (leftsize > rightsize)
-		return (leftsize + 1);
+	if (leftsize != rightsize)
+		return (0);
 	return (rightsize + 1);
 }
 /**
